@@ -1,0 +1,2 @@
+# aiseomodule-prestashop
+aiseomodule-prestashop

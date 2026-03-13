@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="logo.png" alt="AiSeoModule" width="80">
+</p>
 
 <h1 align="center">AiSeoModule 2.0</h1>
 
@@ -11,189 +14,164 @@
   <img src="https://img.shields.io/badge/Version-2.0.0-06B6D4?style=flat-square" alt="Version">
   <img src="https://img.shields.io/badge/License-Commercial-F59E0B?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/DB%20Tables-Zero-10B981?style=flat-square" alt="Zero DB">
-  <img src="https://img.shields.io/badge/Files%20Generated-27+-8B5CF6?style=flat-square" alt="Files">
+  <img src="https://img.shields.io/badge/Files-40+-8B5CF6?style=flat-square" alt="Files">
+  <img src="https://img.shields.io/badge/Languages-24-EF4444?style=flat-square" alt="Languages">
 </p>
 
 ---
 
 ## 📋 Requirements
 
-Before you install, make sure you have:
-
 | What | Minimum |
 |------|---------|
 | PrestaShop | 8.2+ or 9.x |
-| PHP | 8.1 or newer |
-| cURL | enabled (for pinging search engines) |
-| Write access | on your shop root folder (the module saves files there) |
+| PHP | 8.1+ |
+| cURL | enabled |
+| Write access | shop root folder |
 
-That's it. No extra libraries, no composer, no node.js.
-
----
-
-## 🤔 What's the problem?
-
-People don't just use Google anymore. They ask **ChatGPT**, search with **Perplexity**, use **Claude**, talk to **Alexa**. And when they do — your store is invisible. AI doesn't know it exists.
-
-Regular SEO (meta tags, sitemaps) still matters, but it's not enough. AI models need **structured files** they can read — summaries, facts, FAQs, pricing data, knowledge graphs.
-
-Most e-shops don't have any of that. This module creates all of it automatically.
+No extra libraries, no composer, no node.js.
 
 ---
 
-## 💡 What does it do?
+## 🤔 The problem
 
-You install it, click one button, and the module reads your PrestaShop database — your products, categories, brands, prices — and creates **27+ files** that AI systems understand.
+People ask ChatGPT, search with Perplexity, talk to Alexa. Your store has meta tags and a sitemap — that worked in 2020. In 2026, AI needs structured files it can read: summaries, facts, FAQs, pricing data, knowledge graphs, tool definitions.
+
+Most shops have none of that. This module creates all of it. Automatically.
+
+---
+
+## 💡 How it works
 
 ```
-Your store data  →  AiSeoModule  →  27+ AI-readable files on disk
+Your products, categories, brands, prices
+            ↓
+      AiSeoModule
+            ↓
+   40+ AI-ready files on disk
 ```
 
-No database tables created. No queries on page load. Just static files your web server handles. **Zero performance impact.**
+Install → fill in store info → click Generate → done. No database tables, no page load queries, no performance hit.
 
 ---
 
-## 📦 What gets created?
+## 📦 What gets generated
 
-### For search engines
-- `sitemap.xml` — split sitemaps with image support
-- `robots.txt` — rules for 20+ AI bots
-- JSON-LD schemas — Product, Organization, FAQ, Breadcrumb
-- OpenGraph & Twitter Cards
+### Search engines
+`sitemap.xml` · `robots.txt` (20+ AI bots) · JSON-LD · OpenGraph · Twitter Cards · hreflang
 
-### For AI models
-- `llms.txt` — plain-text store overview (what LLMs read first)
-- `llms-full.txt` — full Markdown with 200 products (for RAG)
-- `ai/summary.json` — machine-readable store summary
-- `ai/facts.json` — clean key-value facts
-- `ai/faq.json` — auto-generated FAQ (up to 100 entries)
-- `ai/pricing.json` — product catalog with prices & EANs
-- `ai/knowledge-graph.json` — entity data
-- `ai/agent-manifest.json` — for autonomous AI shoppers
+### AI models
+`llms.txt` · `llms-full.txt` · `ai/summary.json` · `ai/facts.json` · `ai/faq.json` · `ai/pricing.json` · `ai/knowledge-graph.json` · `ai.txt` · `humans.txt`
 
-### For trust & compliance
-- `humans.txt` — E-E-A-T author info
-- `security.txt` — RFC 9116 security contact
-- `.well-known/ai-policy.json` — AI usage policy
-- `.well-known/ai-license.json` — content licensing
-- GDPR & EU AI Act compliance signals
+### Agentic web (March 2026)
+`.well-known/webmcp.json` — Chrome 146 AI agent tools
+`.well-known/agent.json` — W3C Agent Protocol discovery
+`ai/commerce.json` — Google UCP for AI shopping agents
+`ai/agent-manifest.json` — autonomous crawler capabilities
+
+### Compliance & monetization
+`.well-known/comp.json` — IAB CoMP v1.0 (content monetization)
+`.well-known/schemamap.json` — NLWeb Schema Aggregation
+`ai/compliance.json` · `ai/audit.json` · `security.txt`
+
+Plus `ai/negotiate.json` · `ai/feed.json` · `ai/changes.xml` · `ai/datasets.json` · `ai/consensus-matrix.json` · `ai/semantic-toc.json` · `ai/contact.json` · `model-training-policy.json` and more.
 
 ---
 
-## 🚀 Setup (5 minutes)
-
-```
-Step 1  →  Upload ZIP & install the module
-Step 2  →  Fill in store name, organization, social links
-Step 3  →  Click "Generate All Files"
-Step 4  →  Click "AI Content Generator" (reads your DB, writes real content)
-Step 5  →  Add one cron job for daily refresh
-Step 6  →  Copy .htaccess / nginx rules from the built-in helper
-```
-
-**Done.** Everything else is automatic.
-
----
-
-## ⚡ What happens after setup?
-
-You don't have to do anything. The module works in the background:
+## ⚡ After setup
 
 | You do this | Module does this |
-|------------|-----------------|
+|-------------|-----------------|
 | Add/edit a product | Pings IndexNow (6 endpoints) + sitemap ping |
-| Add/edit a category | Same thing |
-| Nothing (daily cron) | Regenerates all 27+ files + Mega Ping to 24 services |
-| Page loads normally | JSON-LD, OpenGraph, meta tags injected automatically |
+| Add/edit a category | Same |
+| Nothing (daily cron) | Regenerates 40+ files + Mega Ping to 24 services |
+| Page loads normally | JSON-LD, OpenGraph, meta tags injected |
 
 ---
 
-## 🔔 Mega Ping (24 services)
-
-When something changes, the module doesn't just wait for Google to notice. It actively notifies:
+## 🔔 Mega Ping — 24 services
 
 - **IndexNow** — 6 endpoints (Microsoft, Yandex, Seznam, Naver, Yep)
 - **Sitemap Ping** — 5 search engines
-- **WebSub** — 2 hubs (Google, Superfeedr)
+- **WebSub** — 2 hubs
 - **XML-RPC** — 3 services
-- **AI Discovery** — 8 file endpoints
-
----
-
-## ⏰ Cron
-
-One line, once a day, that's all:
-
-```bash
-0 3 * * * curl -s "https://yourshop.com/module/aiseomodule/cron?token=YOUR_TOKEN" > /dev/null 2>&1
-```
-
-Big shop? Split it into steps. Huge shop (10k+ products)? Use chunked mode. The module shows you the exact commands.
-
-> **You don't need cron for everyday changes.** Edit a product → module pings search engines instantly. Cron is just the nightly full refresh.
+- **AI Discovery** — 8 endpoints
 
 ---
 
 ## 🤖 AI Content Generator
 
-This is the part that saves you hours. Instead of writing SEO content by hand, it reads your actual database and generates:
+Reads your actual database and writes real content:
 
-- ✅ Store description from your real categories & brands
+- ✅ Store description from your categories & brands
 - ✅ Keywords from top categories + newest products
-- ✅ Category FAQs — *"What can I find in Shoes?"* with real product count
-- ✅ Product FAQs — *"What is Nike Air Max?"* with real price & description
-- ✅ Brand FAQs — *"What Nike products are available?"* with count & price range
-- ✅ Price range FAQs with actual min-max from your catalog
+- ✅ FAQ entries with real product counts, prices, descriptions
+- ✅ Brand FAQs with actual price ranges
 - ✅ Freshness dates set automatically
-- ✅ Store info pulled from PrestaShop config
+- ✅ Store info from PrestaShop config
 
-Run it after install, after adding products, or anytime. It always pulls fresh data.
+No placeholder text. Real data from your real store.
+
+---
+
+## ⏰ Cron
+
+```bash
+# Once a day is enough
+0 3 * * * curl -s "https://yourshop.com/module/aiseomodule/cron?token=TOKEN" > /dev/null 2>&1
+```
+
+Large shop? Split into steps. 10k+ products? Chunked mode. The module shows exact commands.
+
+You don't need cron for everyday changes — the module pings instantly.
 
 ---
 
 ## 🛡️ Bot control
 
-You decide which AI can access your content:
+| Bot | What | Default |
+|-----|------|---------|
+| Googlebot | Google Search | ✅ |
+| GPTBot | OpenAI training | ✅ |
+| OAI-SearchBot | ChatGPT Search | ✅ |
+| ChatGPT-User | ChatGPT browsing | ✅ |
+| ClaudeBot | Claude AI | ✅ |
+| PerplexityBot | Perplexity search | ✅ |
+| Applebot | Siri & Safari | ✅ |
+| Google-Extended | Gemini training | ✅ |
+| CCBot | Common Crawl | ❌ |
+| Bytespider | ByteDance | ❌ |
 
-| Bot | What it does | Default |
-|-----|-------------|---------|
-| Googlebot | Google Search indexing | ✅ Allow |
-| GPTBot | OpenAI training | ✅ Allow |
-| ChatGPT-User | ChatGPT live browsing | ✅ Allow |
-| ClaudeBot | Anthropic Claude AI | ✅ Allow |
-| PerplexityBot | Perplexity AI search | ✅ Allow |
-| Applebot | Siri & Safari | ✅ Allow |
-| Google-Extended | Gemini AI training | ✅ Allow |
-| CCBot | Common Crawl scraper | ❌ Block |
-| Bytespider | ByteDance crawler | ❌ Block |
-
-Plus 12 more bots you can toggle on/off individually.
-
----
-
-## 🌍 Languages
-
-The admin interface is translated into **16 languages**:
-
-🇸🇰 Slovak · 🇨🇿 Czech · 🇩🇪 German · 🇫🇷 French · 🇪🇸 Spanish · 🇮🇹 Italian · 🇵🇹 Portuguese · 🇵🇱 Polish · 🇭🇺 Hungarian · 🇷🇴 Romanian · 🇳🇱 Dutch · 🇸🇪 Swedish · 🇩🇰 Danish · 🇫🇮 Finnish · 🇳🇴 Norwegian · 🇬🇷 Greek
+Plus 12 more toggleable bots.
 
 ---
 
-## 📁 File structure
+## 🧠 Meta tags injected per page
 
-```
-aiseomodule/
-├── aiseomodule.php        ← main module file
-├── config.xml
-├── logo.png
-├── LICENSE
-├── README.md
-├── controllers/front/     ← cron, AI endpoints
-├── translations/          ← 16 language files
-└── views/templates/       ← admin templates
-```
+`ai-memory-anchor` · `ai-content-density` · `ai-content-structure` · `ai-corroboration` · `ai-reading-level` · `ai-decay` · `content-valid-until` · `ai-attribution-required` · `tdm-reservation` · plus `<link>` tags for WebMCP, Schema Aggregation, CoMP, Commerce Protocol, Agent Protocol.
 
-No database tables. Config stored in a JSON file. Uninstall leaves no traces.
+---
+
+## 🌍 24 languages
+
+🇸🇰 Slovak · 🇨🇿 Czech · 🇩🇪 German · 🇫🇷 French · 🇪🇸 Spanish · 🇮🇹 Italian · 🇵🇹 Portuguese · 🇧🇷 Brazilian Portuguese · 🇵🇱 Polish · 🇭🇺 Hungarian · 🇷🇴 Romanian · 🇳🇱 Dutch · 🇸🇪 Swedish · 🇩🇰 Danish · 🇫🇮 Finnish · 🇳🇴 Norwegian · 🇬🇷 Greek · 🇹🇷 Turkish · 🇺🇦 Ukrainian · 🇷🇺 Russian · 🇨🇳 Chinese · 🇯🇵 Japanese · 🇰🇷 Korean · 🇮🇳 Hindi
+
+---
+
+## 🚀 Quick install
+
+1. Upload ZIP → install in Back Office
+2. Fill in store name, org, social links
+3. Click **Generate All Files**
+4. Click **AI Content Generator**
+5. Add one cron job
+6. Copy server rules from built-in helper
+
+---
+
+## 📡 Protocols supported
+
+IndexNow · WebSub · XML-RPC Ping · Sitemap Ping · llms.txt · WebMCP · IAB CoMP v1.0 · NLWeb Schema Aggregation · W3C AI Agent Protocol · Google UCP · Schema.org JSON-LD
 
 ---
 
@@ -203,6 +181,7 @@ No database tables. Config stored in a JSON file. Uninstall leaves no traces.
 
 [![Website](https://img.shields.io/badge/yamiru.com-0F172A?style=flat-square&logo=google-chrome&logoColor=white)](https://yamiru.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Yamiru-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Yamiru)
+[![Discord](https://img.shields.io/badge/Discord-Community-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/aWSQavfPGb)
 
 ---
 
@@ -213,5 +192,5 @@ Yamiru Commercial License — see [LICENSE](LICENSE) file.
 ---
 
 <p align="center">
-  <sub>Built with ☕ in Slovakia · Made for PrestaShop · Ready for AI</sub>
+  <sub> Made for PrestaShop · Ready for AI · March 2026</sub>
 </p>

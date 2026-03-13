@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="logo.png" alt="AiSeoModule" width="80">
-</p>
+
 
 <h1 align="center">AiSeoModule 2.0</h1>
 
@@ -38,6 +36,19 @@ No extra libraries, no composer, no node.js.
 People ask ChatGPT, search with Perplexity, talk to Alexa. Your store has meta tags and a sitemap — that worked in 2020. In 2026, AI needs structured files it can read: summaries, facts, FAQs, pricing data, knowledge graphs, tool definitions.
 
 Most shops have none of that. This module creates all of it. Automatically.
+
+---
+
+## Screenshot
+
+![Imgur Image](https://i.imgur.com/MnnHDVx.png)
+
+![Imgur Image](https://i.imgur.com/6qR2oo3.png)
+
+
+
+
+
 
 ---
 
